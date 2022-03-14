@@ -1,0 +1,32 @@
+compile:
+	gcc -Wall -o hw3 hw3.c
+
+list_all2: compile
+	./hw3 ${dir}
+
+list_size2: compile
+	./hw3 -S ${dir}
+
+list_with_min_size2: compile
+	./hw3 -s ${minSize} ${dir}
+
+list_only_dirs2: compile
+	./hw3 -t d ${dir}
+
+list_only_files2: compile
+	./hw3 -t f ${dir}
+
+list_only_format2: compile
+	./hw3 -f ${format} ${dir}
+
+list_with_e_and_size: compile
+	./hw3 -s 1024 -e "ls -l" ${dir}
+
+list_with_e_and_format: compile
+	./hw3 -f c -e "ls -l" ${dir}
+
+list_with_tar: compile
+	./hw3 -f jpg -E "tar cvf jpg.tar" ${dir}
+
+list_with_wc: compile
+	./hw3 -s 1024 -e "wc -l" ${dir}
